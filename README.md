@@ -59,16 +59,30 @@ TODO
 
 TODO
 
+## Technology Stack
+
+- Fullstack Framework - [Next.js](https://nextjs.org/)
+- Database - [Supabase](https://supabase.com/)
+- Authentication - [Supabase Auth](https://supabase.com/docs/guides/auth/overview)
+- Client State Management - [Zustand](https://zustand-demo.pmnd.rs/)
+- Data Fetching - [Swr](https://swr.vercel.app/)
+- CSS framework - [Tailwindcss](https://tailwindcss.com/)
+- Form Validation - [zod](https://zod.dev/)
+- Drag and Drop - [dndkit](https://dndkit.com/)
+- Version Control - [GitHub](https://github.com/)
+- Deployment - [Vercel](https://vercel.com)
+
+## Tools
+
+- Editor - [VS Code](https://code.visualstudio.com/)
+- Wireframe - [Figma](https://www.figma.com/) or [Draw.io](https://app.diagrams.net/)
+
 ## Getting Started
 
 First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -347,30 +361,64 @@ npx --no -- commitlint --edit "$1"
 >
 > `Reference` - [NextJs Environment Variables](https://nextjs.org/docs/basic-features/environment-variables)
 
+### Zustand
+
+- Inatall `Zustand` package
+  - `npm install zustand`
+
+### Tailwindcss
+
+> [Tailwindcss configuration for NextJS](https://tailwindcss.com/docs/guides/nextjs)
+
+- `npm install -D tailwindcss postcss autoprefixer`
+- `npx tailwindcss init -p`
+- Update `tailwind.config.js`
+
+```json
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
+
+- Update `globals.css` in `src/app` folder
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+- Update `src/app/page.tsx` to test if tailwind is configured correctly.
+
+```tsx
+export default function Home() {
+  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+}
+```
+
+- Run `npm run dev` to test
+
+### Zod
+
+- Install `zod` package
+  - `npm install zod`
+
+### Dndkit
+
+- Install `dndkit` package
+  - `npm install @dnd-kit/core`
+
 ### Commit and Push Changes to GitHub
 
 - `git add .`
 - `git commit -m "ci: configure development environment"`
 - `git remote add origin https://github.com/groupsvkg/qna.git`
 - `git push -u origin main`
-
-## Technology Stack
-
-- Fullstack Framework - [Next.js](https://nextjs.org/)
-- Database - [Supabase](https://supabase.com/)
-- Authentication - [Supabase Auth](https://supabase.com/docs/guides/auth/overview)
-- Client State Management - [Zustand](https://zustand-demo.pmnd.rs/)
-- Data Fetching - [Swr](https://swr.vercel.app/)
-- CSS framework - [Tailwind](https://tailwindcss.com/)
-- Form Validation - [zod](https://zod.dev/)
-- Drag and Drop - [dndkit](https://dndkit.com/)
-- Version Control - [GitHub](https://github.com/)
-- Deployment - [Vercel](https://vercel.com)
-
-## Tools
-
-- Editor - [VS Code](https://code.visualstudio.com/)
-- Wireframe - [Figma](https://www.figma.com/) or [Draw.io](https://app.diagrams.net/)
 
 ## Learn More
 
