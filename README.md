@@ -1,4 +1,63 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# QnA App
+
+This project aims to develop a question-and-answer web app where users can solve the questions posted by other users or the system. They will also have the ability to post their questions. The app will allow users to bookmark or group questions and challenge others.
+
+## Requirements
+
+> - `FR` - Functional Requirement,
+> - `NFR` - Non Functional Requirement
+> - `ER` - Extended Requirement
+> - `SR` - System Requirement
+
+| ID  | Description                                                                                     | Status      |
+| --- | ----------------------------------------------------------------------------------------------- | ----------- |
+| FR1 | User must be able to login via email and password, gmail, and others supported by `Supabase`    | IN PROGRESS |
+| FR2 | User must be able to view list of questions                                                     | TODO        |
+| FR3 | User must be able to view and attempt a specific question                                       | TODO        |
+| FR4 | User must be able to add new question                                                           | TODO        |
+| FR5 | User must be able to delete his question                                                        | TODO        |
+| FR6 | User must be able to Group existing questions that further can be shared as challenge to others | TODO        |
+| FR7 | User must be able to see his score and activity history                                         | TODO        |
+| SR1 | System must handle realtime notification                                                        | TODO        |
+| SR2 | System should allow question ingestion                                                          | TODO        |
+
+## Capacity Estimate
+
+### Traffic Estimates
+
+TODO
+
+### Storage Estimates
+
+TODO
+
+### Bandwidth Estimates
+
+TODO
+
+### Memory Estimates
+
+TODO
+
+## System APIs
+
+TODO
+
+## Database Design
+
+TODO
+
+## Design
+
+TODO
+
+## Purging or DB Cleanup
+
+TODO
+
+## Security and Permissions
+
+TODO
 
 ## Getting Started
 
