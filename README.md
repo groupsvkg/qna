@@ -22,6 +22,279 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## Development Setup
+
+### Create Project
+
+- Create `GitHub` repository
+- Create NextJs project on laptop
+  - `npx create-next-app@latest --experimental-app`
+- Execute the following steps. Final step will push changes to GitHub repository.
+
+### Engine Locking
+
+- Create `.nvmrc` in root directory to specify which node version to be used in this project i.e. `lts/hydrogen - v18.15.0`
+- Create `.npmrc` in root directory to indicate which package manager is to be used strictly.
+
+> NextJs use Node `v16.8.0` or `later`. If node version used is lower than `v16.8.0`, then change it using `nvm` by doing following.
+>
+> - `nvm ls` will show what node version is currently set to.
+> - `nvm install v18.15.0` to install `v18.15.0` or anyother you want.
+> - `nvm use` if `.nvmrc` is specified with node version or `nvm use v18.15.0`
+
+- Update `package.json` to indicate `node` and `npm` version.
+
+```json
+"engines": {
+    "node": ">=18.15.0",
+    "yarn": "please-use-npm",
+    "npm": ">=9.5.0"
+  },
+```
+
+### Linting
+
+- Create `.eslintrc.json` file in root directory with following content
+
+```json
+{
+  "extends": ["next", "next/core-web-vitals", "eslint:recommended"],
+  "globals": {
+    "React": "readonly"
+  }
+}
+```
+
+- Run `npm run lint`
+
+### Formatting
+
+- Install `prettier` as dev dependency. Run `npm add -D prettier`
+
+```json
+"devDependencies": {
+    "prettier": "^2.8.4"
+}
+```
+
+- Create `.prettierrc` file in root directory with the following content.
+
+```json
+{
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": true
+}
+```
+
+- Create `.prettierignore` file in root directory with the following content.
+
+```sh
+.yarn
+.next
+dist
+node_modules
+```
+
+- Update `package.json`
+
+```json
+"scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prettier": "prettier --write ."
+  }
+```
+
+- Run `npm run prettier`
+
+### Git
+
+- Install `Husky`
+  - Run `npm add -D husky`
+  - Run `npx husky install`. It creates `.husky` folder
+
+```json
+"devDependencies": {
+    "husky": "^8.0.3",
+    "prettier": "^2.8.4"
+}
+```
+
+- Update `package.json` in the scripts section `"prepare": "husky install"` so that `Husky` gets installed automatically when other developers run the project.
+
+```json
+"scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prettier": "prettier --write .",
+    "prepare": "husky install"
+}
+```
+
+- Create following hooks
+  - Run `npx husky add .husky/pre-commit "npm run lint"`
+  - Run `npx husky add .husky/pre-push "npm run build"`
+
+```zsh
+$ > npx husky add .husky/pre-commit "npm run lint"
+husky - created .husky/pre-commit
+$ > ls  .husky
+_          pre-commit
+
+$ > cat .husky/pre-commit
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npm run lint
+
+```
+
+```zsh
+$ > npx husky add .husky/pre-push "npm run build"
+husky - created .husky/pre-push
+$ > ls  .husky
+_          pre-commit pre-push
+
+$ > cat .husky/pre-push
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npm run build
+```
+
+- Install `commitlint` package as dev dependency
+  - Run `npm add -D @commitlint/config-conventional @commitlint/cli`
+
+```json
+"devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "husky": "^8.0.3",
+    "prettier": "^2.8.4"
+}
+```
+
+- Create `commitlint.config.js` in root directory
+- Enable `commitlint` with `Husky`
+  - Run `npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'`
+
+```zsh
+$ > npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
+husky - created .husky/commit-msg
+
+$ > ls  .husky
+_          commit-msg pre-commit pre-push
+
+$ > cat .husky/commit-msg
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npx --no -- commitlint --edit "$1"
+```
+
+### VS Code
+
+- Create `.vscode/settings.json` file with following content
+
+```json
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  }
+}
+```
+
+### Debugging with VS Code
+
+- Create `.vscode/launch.json` file with following content.
+
+> <https://nextjs.org/docs/advanced-features/debugging>
+
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Next.js: debug server-side",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run dev"
+    },
+    {
+      "name": "Next.js: debug client-side",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000"
+    },
+    {
+      "name": "Next.js: debug full stack",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run dev",
+      "serverReadyAction": {
+        "pattern": "started server on .+, url: (https?://.+)",
+        "uriFormat": "%s",
+        "action": "debugWithChrome"
+      }
+    }
+  ]
+}
+```
+
+- Install `cross-env` as dev dependency.
+  - Run `npm add -D cross-env`
+
+```json
+"devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "cross-env": "^7.0.3",
+    "husky": "^8.0.3",
+    "prettier": "^2.8.4"
+}
+```
+
+- Update `package.json`
+
+```json
+"scripts": {
+    "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prettier": "prettier --write .",
+    "prepare": "husky install"
+}
+```
+
+### Environment Variables
+
+- Create `.env.local` in root directory
+
+> `.env.local` always overrides the defaults set.
+>
+> Note: `.env`, `.env.development`, and `.env.production` files should be included in your repository as they define defaults. `.env*.local` should be added to `.gitignore`, as those files are intended to be ignored. `.env.local` is where secrets can be stored.
+>
+> `Reference` - [NextJs Environment Variables](https://nextjs.org/docs/basic-features/environment-variables)
+
+### Commit and Push Changes to GitHub
+
+- `git add .`
+- `git commit -m "ci: configure development environment"`
+- `git remote add origin https://github.com/groupsvkg/qna.git`
+- `git push -u origin main`
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
