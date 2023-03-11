@@ -303,6 +303,8 @@ npx --no -- commitlint --edit "$1"
 - Client State Management - [Zustand](https://zustand-demo.pmnd.rs/)
 - Data Fetching - [Swr](https://swr.vercel.app/)
 - CSS framework - [Tailwind](https://tailwindcss.com/)
+- Form Validation - [zod](https://zod.dev/)
+- Drag and Drop - [dndkit](https://dndkit.com/)
 - Version Control - [GitHub](https://github.com/)
 - Deployment - [Vercel](https://vercel.com)
 
