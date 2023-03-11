@@ -19,7 +19,7 @@ This project aims to develop a question-and-answer web app where users can solve
 | FR6 | User must be able to Group existing questions that further can be shared as challenge to others | TODO        |
 | FR7 | User must be able to see his score and activity history                                         | TODO        |
 | SR1 | System must handle realtime notification                                                        | TODO        |
-| SR2 | System should allow question ingestion                                                          | TODO        |
+| SR2 | System should allow new question ingestion                                                      | TODO        |
 
 ## Capacity Estimate
 
@@ -47,7 +47,7 @@ TODO
 
 TODO
 
-## Design
+## System Design
 
 TODO
 
