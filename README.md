@@ -295,6 +295,22 @@ npx --no -- commitlint --edit "$1"
 - `git remote add origin https://github.com/groupsvkg/qna.git`
 - `git push -u origin main`
 
+## Technology Stack
+
+- Fullstack Framework - [Next.js](https://nextjs.org/)
+- Database - [Supabase](https://supabase.com/)
+- Authentication - [Supabase Auth](https://supabase.com/docs/guides/auth/overview)
+- Client State Management - [Zustand](https://zustand-demo.pmnd.rs/)
+- Data Fetching - [Swr](https://swr.vercel.app/)
+- CSS framework - [Tailwind](https://tailwindcss.com/)
+- Version Control - [GitHub](https://github.com/)
+- Deployment - [Vercel](https://vercel.com)
+
+## Tools
+
+- Editor - [VS Code](https://code.visualstudio.com/)
+- Wireframe - [Figma](https://www.figma.com/) or [Draw.io](https://app.diagrams.net/)
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
