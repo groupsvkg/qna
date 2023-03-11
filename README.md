@@ -374,7 +374,7 @@ npx --no -- commitlint --edit "$1"
 - `npx tailwindcss init -p`
 - Update `tailwind.config.js`
 
-```json
+```js
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
