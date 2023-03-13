@@ -69,7 +69,7 @@ TODO
 - Server Data Fetching - [fetch](https://beta.nextjs.org/docs/data-fetching/fetching)
 - CSS framework - [Tailwindcss](https://tailwindcss.com/)
 - Tailwindcss Forms Plugin - [Tailwindcss Forms](https://github.com/tailwindlabs/tailwindcss-forms)
-- Tailwindcss Pritter Plugin - [Prettier Plugin](https://github.com/tailwindlabs/prettier-plugin-tailwindcss)
+- Tailwindcss Prettier Plugin - [Prettier Plugin](https://github.com/tailwindlabs/prettier-plugin-tailwindcss)
 - Form Validation - [zod](https://zod.dev/)
 - Drag and Drop - [dndkit](https://dndkit.com/)
 - Version Control - [GitHub](https://github.com/)
