@@ -65,7 +65,8 @@ TODO
 - Database - [Supabase](https://supabase.com/)
 - Authentication - [Supabase Auth](https://supabase.com/docs/guides/auth/overview)
 - Client State Management - [Zustand](https://zustand-demo.pmnd.rs/)
-- Data Fetching - [Swr](https://swr.vercel.app/)
+- Client Data Fetching - [Swr](https://swr.vercel.app/)
+- Server Data Fetching - [fetch](https://beta.nextjs.org/docs/data-fetching/fetching)
 - CSS framework - [Tailwindcss](https://tailwindcss.com/)
 - Form Validation - [zod](https://zod.dev/)
 - Drag and Drop - [dndkit](https://dndkit.com/)
@@ -402,6 +403,27 @@ export default function Home() {
 ```
 
 - Run `npm run dev` to test
+
+### Tailwindcss Form
+
+- Install `@tailwindcss/forms` package
+  - `npm install -D @tailwindcss/forms`
+- Update `tailwind.config.js`
+
+```js
+// tailwind.config.js
+module.exports = {
+  theme: {
+    // ...
+  },
+  plugins: [
+    require('@tailwindcss/forms'),
+    // ...
+  ],
+};
+```
+
+> `Reference`: [@tailwindcss/forms](https://github.com/tailwindlabs/tailwindcss-forms)
 
 ### Zod
 
