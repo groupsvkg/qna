@@ -68,6 +68,8 @@ TODO
 - Client Data Fetching - [Swr](https://swr.vercel.app/)
 - Server Data Fetching - [fetch](https://beta.nextjs.org/docs/data-fetching/fetching)
 - CSS framework - [Tailwindcss](https://tailwindcss.com/)
+- Tailwindcss Forms Plugin - [Tailwindcss Forms](https://github.com/tailwindlabs/tailwindcss-forms)
+- Tailwindcss Pritter Plugin - [Pritter Plugin](https://github.com/tailwindlabs/prettier-plugin-tailwindcss)
 - Form Validation - [zod](https://zod.dev/)
 - Drag and Drop - [dndkit](https://dndkit.com/)
 - Version Control - [GitHub](https://github.com/)
@@ -404,7 +406,7 @@ export default function Home() {
 
 - Run `npm run dev` to test
 
-### Tailwindcss Form
+### Tailwindcss Forms Plugin
 
 - Install `@tailwindcss/forms` package
   - `npm install -D @tailwindcss/forms`
@@ -424,6 +426,21 @@ module.exports = {
 ```
 
 > `Reference`: [@tailwindcss/forms](https://github.com/tailwindlabs/tailwindcss-forms)
+
+### Tailwindcss Prettier Plugin
+
+- Install `prettier-plugin-tailwindcss`
+
+  - `npm install -D prettier prettier-plugin-tailwindcss`
+
+- Update `prettier.config.js`
+
+```js
+// prettier.config.js
+module.exports = {
+  plugins: [require('prettier-plugin-tailwindcss')],
+};
+```
 
 ### Zod
 
