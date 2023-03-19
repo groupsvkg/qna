@@ -55,12 +55,14 @@ TODO
 ### Login
 
 Iteration - 1
-![Login Page](./design/ui/login.png)
+
+<img src='./design/ui/login.png' width='400'>
 
 ### Signup
 
 Iteration - 1
-![Signup Page](./design/ui/signup.png)
+
+<img src='./design/ui/signup.png' width='400'>
 
 ## System APIs
 
