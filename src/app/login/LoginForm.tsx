@@ -1,7 +1,9 @@
+import Link from 'next/link';
+
 export default function LoginForm() {
   return (
     <section className="basis-1/2">
-      <h1 className="m-2 text-3xl font-semibold text-gray-600">Login</h1>
+      <h1 className="m-2 text-3xl font-semibold text-gray-500">Login</h1>
       <form className="space-y-2 p-4">
         <div>
           <label htmlFor="username" className="text-gray-400">
@@ -22,19 +24,29 @@ export default function LoginForm() {
             type="password"
             name="password"
             id="password"
-            className="block w-full rounded-md"
+            className="mb-6 block w-full rounded-md"
           />
         </div>
         <div className="flex justify-center space-x-2">
-          <button type="submit" className="h-11 w-full bg-blue-900 text-white">
+          <button
+            type="submit"
+            className="h-11 w-full  rounded-3xl bg-blue-700 text-white"
+          >
             Login
           </button>
-          <button type="submit" className="h-11 w-full bg-blue-700 text-white">
-            Register
+
+          <button
+            type="button"
+            className="h-11 w-full rounded-3xl bg-green-700 text-white"
+          >
+            <Link href={'/signup'}>Signup</Link>
           </button>
         </div>
         <div className="flex justify-center">
-          <button type="button" className="h-11 w-full bg-blue-900 text-white">
+          <button
+            type="button"
+            className="h-11 w-full rounded-3xl bg-blue-700 text-white"
+          >
             Google
           </button>
         </div>
