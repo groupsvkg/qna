@@ -54,7 +54,7 @@ TODO
 | phone        | string | user phone number         |
 | provider     | string | oAuth provider            |
 | created      | date   | user creation date        |
-| last sign in | date   | last sign in date         |
+| last_sign_in | date   | last sign in date         |
 
 ### Profiles
 
