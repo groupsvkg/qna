@@ -45,7 +45,27 @@ TODO
 
 ## Database Design
 
-TODO
+### Users
+
+| Name         | Type   | Description               |
+| ------------ | ------ | ------------------------- |
+| id           | uuid   | systenm generated user id |
+| email        | string | user email id             |
+| phone        | string | user phone number         |
+| provider     | string | oAuth provider            |
+| created      | date   | user creation date        |
+| last sign in | date   | last sign in date         |
+
+### Profiles
+
+| Name       | Type   | Description              |
+| ---------- | ------ | ------------------------ |
+| id         | uuid   | system generated user id |
+| updated_at | date   | lst profile update date  |
+| username   | string | username                 |
+| full_name  | string | user full name           |
+| avatar_url | url    | user profile pic         |
+| website    | url    | user website             |
 
 ## System Design
 
@@ -63,7 +83,7 @@ TODO
 
 - Fullstack Framework - [Next.js](https://nextjs.org/)
 - Database - [Supabase](https://supabase.com/)
-- Authentication - [Supabase Auth](https://supabase.com/docs/guides/auth/overview)
+- Authentication - [Supabase Auth](https://supabase.com/docs/guides/getting-started/tutorials/with-nextjs), [Youtube Tutorial](https://www.youtube.com/watch?v=0Fs96oZ4se0&list=PL5S4mPUpp4OtwG-qCxm8gA_hjaBq0OPdz&index=4)
 - Client State Management - [Zustand](https://zustand-demo.pmnd.rs/)
 - Client Data Fetching - [Swr](https://swr.vercel.app/)
 - Server Data Fetching - [fetch](https://beta.nextjs.org/docs/data-fetching/fetching)
