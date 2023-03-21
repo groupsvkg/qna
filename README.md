@@ -23,10 +23,9 @@ This project aims to develop a question-and-answer web app where users can solve
 
 ## Features
 
-### Login
+### Login
 
 - Implemented basic login page
--
 
 ### Signup
 
@@ -108,7 +107,7 @@ TODO
 
 - Fullstack Framework - [Next.js](https://nextjs.org/)
 - Database - [Supabase](https://supabase.com/)
-- Authentication - [Supabase Auth](https://supabase.com/docs/guides/getting-started/tutorials/with-nextjs), [Youtube Tutorial](https://www.youtube.com/watch?v=0Fs96oZ4se0&list=PL5S4mPUpp4OtwG-qCxm8gA_hjaBq0OPdz&index=4)
+- Authentication - [Supabase Auth](https://supabase.com/docs/guides/getting-started/tutorials/with-nextjs), [Youtube Tutorial](https://www.youtube.com/watch?v=0Fs96oZ4se0&list=PL5S4mPUpp4OtwG-qCxm8gA_hjaBq0OPdz&index=4), [Example](https://github.com/supabase/auth-helpers/tree/main/examples/nextjs-server-components)
 - Client State Management - [Zustand](https://zustand-demo.pmnd.rs/)
 - Client Data Fetching - [Swr](https://swr.vercel.app/)
 - Server Data Fetching - [fetch](https://beta.nextjs.org/docs/data-fetching/fetching)
@@ -128,6 +127,8 @@ TODO
 ## Getting Started
 
 First, run the development server:
+
+> Run command `nvm use` to use `node` version configured in `.nvmrc`
 
 ```bash
 npm run dev
@@ -498,6 +499,11 @@ module.exports = {
 
 - Install `dndkit` package
   - `npm install @dnd-kit/core`
+
+### Supabase Cleint
+
+- Install `supabase-js` package
+  - `npm install @supabase/supabase-js`
 
 ### Commit and Push Changes to GitHub
 

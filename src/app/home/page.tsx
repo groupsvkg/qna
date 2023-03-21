@@ -1,12 +1,10 @@
-'use client';
-
 import { useRouter } from 'next/navigation';
-import { useSupabase } from '../components/supabase-provider';
-import Login from './login/page';
+import { useSupabase } from '../../components/supabase-provider';
 
-export default function Page() {
+export default function Home() {
   const router = useRouter();
   const { supabase, session } = useSupabase();
+  console.log(session);
 
   const handleLogout = async () => {
     const { error } = await supabase.auth.signOut();
@@ -17,15 +15,12 @@ export default function Page() {
       router.push('/');
     }
   };
-
-  return session ? (
+  return (
     <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <h1>Home Page!</h1>
       <button onClick={handleLogout} className="ml-10 bg-blue-600 shadow-sm">
         Logout
       </button>
     </>
-  ) : (
-    <Login />
   );
 }

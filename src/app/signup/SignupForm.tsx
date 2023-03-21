@@ -1,11 +1,26 @@
 'use client';
 
-import { FormEvent } from 'react';
+import { useRouter } from 'next/navigation';
+import { useSupabase } from '../../components/supabase-provider';
 
 export default function SignupForm() {
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const { supabase } = useSupabase();
+  const router = useRouter();
+
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
+    const { error } = await supabase.auth.signUp({
+      email: event.target.email.value,
+      password: event.target.password.value,
+    });
+
+    if (error) {
+      console.log({ error });
+    } else {
+      router.replace('/');
+    }
   };
+
   return (
     <section className="flex h-screen items-center justify-center">
       <div className="flex h-1/2 w-1/4 flex-col rounded-md border-2 shadow-md">
