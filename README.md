@@ -9,17 +9,17 @@ This project aims to develop a question-and-answer web app where users can solve
 > - `ER` - Extended Requirement
 > - `SR` - System Requirement
 
-| ID  | Description                                                                                     | Status      |
-| --- | ----------------------------------------------------------------------------------------------- | ----------- |
-| FR1 | User must be able to login via email and password, gmail, and others supported by `Supabase`    | IN PROGRESS |
-| FR2 | User must be able to view list of questions                                                     | TODO        |
-| FR3 | User must be able to view and attempt a specific question                                       | TODO        |
-| FR4 | User must be able to add new question                                                           | TODO        |
-| FR5 | User must be able to delete his question                                                        | TODO        |
-| FR6 | User must be able to Group existing questions that further can be shared as challenge to others | TODO        |
-| FR7 | User must be able to see his score and activity history                                         | TODO        |
-| SR1 | System must handle realtime notification                                                        | TODO        |
-| SR2 | System should allow new question ingestion                                                      | TODO        |
+| ID  | Description                                                                                     | Status |
+| --- | ----------------------------------------------------------------------------------------------- | ------ |
+| FR1 | User must be able to login via email and password, gmail, and others supported by `Supabase`    | DONE   |
+| FR2 | User must be able to view list of questions                                                     | TODO   |
+| FR3 | User must be able to view and attempt a specific question                                       | TODO   |
+| FR4 | User must be able to add new question                                                           | TODO   |
+| FR5 | User must be able to delete his question                                                        | TODO   |
+| FR6 | User must be able to Group existing questions that further can be shared as challenge to others | TODO   |
+| FR7 | User must be able to see his score and activity history                                         | TODO   |
+| SR1 | System must handle realtime notification                                                        | TODO   |
+| SR2 | System should allow new question ingestion                                                      | TODO   |
 
 ## Features
 
@@ -63,6 +63,12 @@ Iteration - 1
 
 <img src='./design/ui/signup.png' width='400'>
 
+## Technial Debt
+
+- Improve Login page
+- Improve Signup page
+- Implement loading page for page transitions
+
 ## System APIs
 
 TODO
@@ -85,7 +91,7 @@ TODO
 | Name       | Type   | Description              |
 | ---------- | ------ | ------------------------ |
 | id         | uuid   | system generated user id |
-| updated_at | date   | lst profile update date  |
+| updated_at | date   | last profile update date |
 | username   | string | username                 |
 | full_name  | string | user full name           |
 | avatar_url | url    | user profile pic         |
@@ -511,6 +517,18 @@ module.exports = {
 - `git commit -m "ci: configure development environment"`
 - `git remote add origin https://github.com/groupsvkg/qna.git`
 - `git push -u origin main`
+
+## Errors
+
+### Encoding
+
+`./node_modules/node-fetch/lib/index.js
+Module not found: Can't resolve 'encoding' in '/Users/vishalgupta/work/personal/programming/project/qna/qna/node_modules/node-fetch/lib'`
+
+Solution - [Github](https://github.com/vercel/next.js/issues/7621)
+
+> - Delete `.next` folder
+> - `npm install -D encoding`
 
 ## Learn More
 

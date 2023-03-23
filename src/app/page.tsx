@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useSupabase } from '../components/supabase-provider';
+import Home from './home/page';
 import Login from './login/page';
 
 export default function Page() {
@@ -18,14 +19,5 @@ export default function Page() {
     }
   };
 
-  return session ? (
-    <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <button onClick={handleLogout} className="ml-10 bg-blue-600 shadow-sm">
-        Logout
-      </button>
-    </>
-  ) : (
-    <Login />
-  );
+  return session ? <Home /> : <Login />;
 }
