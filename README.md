@@ -51,7 +51,7 @@ TODO
 
 ## User Interface
 
-### Home
+### Home
 
 <img src='./design/ui/home_iteration_2.png' width='200' height='400'>
 
@@ -65,7 +65,7 @@ TODO
 
 <img src='./design/ui/signup_iteration_1.png' width='400'>
 
-## Technial Debt
+## Technical Debt
 
 - Improve Login page
 - Improve Signup page
