@@ -51,17 +51,19 @@ TODO
 
 ## User Interface
 
+### Home
+
+<img src='./design/ui/home_iteration_2.png' width='200' height='400'>
+
+<img src='./design/ui/home_iteration_1.png' width='200' height='400'>
+
 ### Login
 
-Iteration - 1
-
-<img src='./design/ui/login.png' width='400'>
+<img src='./design/ui/login_iteration_1.png' width='400'>
 
 ### Signup
 
-Iteration - 1
-
-<img src='./design/ui/signup.png' width='400'>
+<img src='./design/ui/signup_iteration_1.png' width='400'>
 
 ## Technial Debt
 
@@ -122,6 +124,7 @@ TODO
 - Tailwindcss Prettier Plugin - [Prettier Plugin](https://github.com/tailwindlabs/prettier-plugin-tailwindcss)
 - Form Validation - [zod](https://zod.dev/)
 - Drag and Drop - [dndkit](https://dndkit.com/)
+- Icons - [heroicons](https://github.com/tailwindlabs/heroicons)
 - Version Control - [GitHub](https://github.com/)
 - Deployment - [Vercel](https://vercel.com)
 
@@ -510,6 +513,11 @@ module.exports = {
 
 - Install `supabase-js` package
   - `npm install @supabase/supabase-js`
+
+### Icons
+
+- Install `heroicons` package
+  - `npm install @heroicons/react`
 
 ### Commit and Push Changes to GitHub
 
