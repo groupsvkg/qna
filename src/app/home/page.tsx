@@ -1,18 +1,34 @@
 'use client';
 
 import { RocketLaunchIcon } from '@heroicons/react/24/solid';
-import { KeyboardEvent, useState } from 'react';
+import { KeyboardEvent, useEffect, useRef, useState } from 'react';
 
 export default function Home() {
   const [input, setInput] = useState<string[]>([]);
+  const divRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    divRef.current?.focus();
+  }, []);
 
   const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    event.preventDefault();
+
     if (event.key.length === 1) {
+      if (input.length > 0 && input[input.length - 1] === '\u23ce') return;
       setInput([...input, event.key]);
     }
 
     if (event.key === 'Backspace') {
       setInput(input.slice(0, input.length - 1));
+    }
+
+    if (
+      event.key === 'Enter' &&
+      input.length > 0 &&
+      input[input.length - 1] !== '\u23ce'
+    ) {
+      setInput([...input, '\u23ce']);
     }
   };
 
@@ -21,6 +37,7 @@ export default function Home() {
       <div
         tabIndex={0}
         onKeyDown={handleKeyDown}
+        ref={divRef}
         className="flex h-screen w-screen flex-col items-center justify-center focus:outline-none"
       >
         <div className="mb-20 h-40 w-40">
