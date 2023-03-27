@@ -53,6 +53,8 @@ TODO
 
 ### Home
 
+<img src='./design/ui/home_iteration_3.png' width='200' height='400'>
+
 <img src='./design/ui/home_iteration_2.png' width='200' height='400'>
 
 <img src='./design/ui/home_iteration_1.png' width='200' height='400'>
@@ -76,6 +78,8 @@ TODO
 TODO
 
 ## Database Design
+
+<img src='./design/db/erd_iteration_1.png'>
 
 ### Users
 

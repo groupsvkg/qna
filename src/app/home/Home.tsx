@@ -1,6 +1,6 @@
 'use client';
 
-import { RocketLaunchIcon } from '@heroicons/react/24/solid';
+import { PlusCircleIcon, RocketLaunchIcon } from '@heroicons/react/24/solid';
 import { KeyboardEvent, useEffect, useRef, useState } from 'react';
 
 export default function Home() {
@@ -35,9 +35,9 @@ export default function Home() {
   return (
     <>
       <div
+        ref={divRef}
         tabIndex={0}
         onKeyDown={handleKeyDown}
-        ref={divRef}
         className="flex h-screen w-screen flex-col items-center justify-center focus:outline-none"
       >
         <div className="mb-20 h-40 w-40">
@@ -59,6 +59,9 @@ export default function Home() {
           Type to answer...
         </div>
       )}
+      <div className="fixed bottom-4 right-4 flex w-screen justify-end">
+        <PlusCircleIcon className="h-16 w-16 text-green-500 hover:text-green-600" />
+      </div>
     </>
   );
 }
