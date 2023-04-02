@@ -1,6 +1,7 @@
 'use client';
 
 import { PlusCircleIcon, RocketLaunchIcon } from '@heroicons/react/24/solid';
+import Link from 'next/link';
 import { KeyboardEvent, useEffect, useRef, useState } from 'react';
 
 export default function Home() {
@@ -60,7 +61,9 @@ export default function Home() {
         </div>
       )}
       <div className="fixed bottom-4 right-4 flex w-screen justify-end">
-        <PlusCircleIcon className="h-16 w-16 text-green-500 hover:text-green-600" />
+        <Link href="/question">
+          <PlusCircleIcon className="h-16 w-16 text-green-500 hover:text-green-600" />
+        </Link>
       </div>
     </>
   );
