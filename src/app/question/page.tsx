@@ -1,6 +1,5 @@
 'use client';
 import 'katex/dist/katex.min.css';
-import Image from 'next/image';
 import { useState } from 'react';
 import Latex from 'react-latex-next';
 
@@ -16,7 +15,10 @@ export default function Page() {
     const name = event.target.name;
     const value = event.target.value;
 
-    if (name === 'type') setQuestionType(value);
+    if (name === 'type') {
+      setQuestionInput('');
+      setQuestionType(value);
+    }
 
     if (name === 'questionLatex') {
       if (value) setQuestionInput(`$${value}$`);
@@ -75,7 +77,7 @@ export default function Page() {
               <input
                 type="text"
                 name="questionText"
-                className="block w-full rounded-md text-3xl text-red-400"
+                className="block w-full rounded-md text-xl text-red-400"
               />
             )}
             {questionType === 'url' && (
@@ -85,13 +87,13 @@ export default function Page() {
                   name="questionUrl"
                   className="block w-full rounded-md"
                 />
-                {questionInput && (
-                  <Image
+                {questionInput && !questionInput.includes('$') && (
+                  <img
                     src={questionInput}
                     alt="Question image"
                     width={200}
                     height={200}
-                    className="mt-2"
+                    className="mt-2 text-red-400"
                   />
                 )}
               </>
