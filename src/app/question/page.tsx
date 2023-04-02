@@ -1,17 +1,30 @@
 'use client';
-
+import 'katex/dist/katex.min.css';
+import Image from 'next/image';
 import { useState } from 'react';
+import Latex from 'react-latex-next';
 
 export default function Page() {
   const [questionType, setQuestionType] = useState('text');
+  const [questionInput, setQuestionInput] = useState('');
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
   };
 
   const handleChange = (event: any) => {
-    if (event.target.name === 'type') setQuestionType(event.target.value);
+    const name = event.target.name;
+    const value = event.target.value;
+
+    if (name === 'type') setQuestionType(value);
+
+    if (name === 'questionLatex') {
+      if (value) setQuestionInput(`$${value}$`);
+      else setQuestionInput('');
+    }
+    if (name === 'questionUrl') setQuestionInput(value);
   };
+
   return (
     <div className="flex h-screen w-screen flex-col items-center justify-center">
       <form
@@ -31,7 +44,7 @@ export default function Page() {
             className="block w-full rounded-md text-blue-500"
           />
         </div>
-        <div className="h-36 border-2 border-dashed">
+        <div className="border-2 border-dashed">
           <div className="m-1 text-gray-500">Question</div>
           <div className="flex justify-around">
             <label htmlFor="text" className="text-gray-400">
@@ -61,37 +74,53 @@ export default function Page() {
             {questionType === 'text' && (
               <input
                 type="text"
-                name="question"
+                name="questionText"
                 className="block w-full rounded-md text-3xl text-red-400"
               />
             )}
             {questionType === 'url' && (
-              <input
-                type="url"
-                name="question"
-                className="block w-full rounded-md"
-              />
+              <>
+                <input
+                  type="url"
+                  name="questionUrl"
+                  className="block w-full rounded-md"
+                />
+                {questionInput && (
+                  <Image
+                    src={questionInput}
+                    alt="Question image"
+                    width={200}
+                    height={200}
+                    className="mt-2"
+                  />
+                )}
+              </>
             )}
             {questionType === 'image' && (
               <input
                 type="file"
-                name="question"
+                name="questionImage"
                 className="block w-full rounded-md"
               />
             )}
             {questionType === 'draw' && (
               <input
                 type="text"
-                name="question"
+                name="questionDraw"
                 className="block w-full rounded-md"
               />
             )}
             {questionType === 'latex' && (
-              <input
-                type="text"
-                name="question"
-                className="block w-full rounded-md"
-              />
+              <>
+                <input
+                  type="text"
+                  name="questionLatex"
+                  className="block w-full rounded-md"
+                />
+                <div className="mt-3 text-purple-500">
+                  <Latex>{questionInput}</Latex>
+                </div>
+              </>
             )}
           </div>
         </div>
