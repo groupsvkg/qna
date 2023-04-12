@@ -21,40 +21,12 @@ This project aims to develop a question-and-answer web app where users can solve
 | SR1 | System must handle realtime notification                                                        | TODO   |
 | SR2 | System should allow new question ingestion                                                      | TODO   |
 
-## Features
-
-### Login
-
-- Implemented basic login page
-
-### Signup
-
-- Implemented basic signup page
-
-## Capacity Estimate
-
-### Traffic Estimates
-
-TODO
-
-### Storage Estimates
-
-TODO
-
-### Bandwidth Estimates
-
-TODO
-
-### Memory Estimates
-
-TODO
-
 ## User Interface
 
 ### Flow
 
-<img src='./design/ui/app_flow_iteration_1.png' width='500'>
-<img src='./design/ui/wireframe_home_iteration_1.png' width='500'>
+<img src='./design/ui/app_flow_iteration_1.png' width='600'>
+<img src='./design/ui/wireframe_home_iteration_1.png' width='600'>
 
 ### Post Question
 
