@@ -1,14 +1,29 @@
 'use client';
+
+import { useSupabase } from '@/components/supabase-provider';
 import 'katex/dist/katex.min.css';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import Latex from 'react-latex-next';
 
 export default function Page() {
+  const router = useRouter();
+  const { session, supabase } = useSupabase();
   const [questionType, setQuestionType] = useState('text');
   const [questionInput, setQuestionInput] = useState('');
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
+
+    const { error } = await supabase.from('questions').insert({
+      created_by: session?.user.id,
+      category: event.target.category.value,
+      type: questionType,
+      question: questionInput,
+      answer: event.target.answer.value,
+    });
+
+    if (!error) router.back();
   };
 
   const handleChange = (event: any) => {
@@ -18,6 +33,10 @@ export default function Page() {
     if (name === 'type') {
       setQuestionInput('');
       setQuestionType(value);
+    }
+
+    if (name === 'questionText') {
+      setQuestionInput(value);
     }
 
     if (name === 'questionLatex') {
@@ -85,7 +104,7 @@ export default function Page() {
                 <input
                   type="url"
                   name="questionUrl"
-                  className="block w-full rounded-md"
+                  className="block w-full rounded-md text-red-400"
                 />
                 {questionInput && !questionInput.includes('$') && (
                   <img
@@ -93,7 +112,7 @@ export default function Page() {
                     alt="Question image"
                     width={200}
                     height={200}
-                    className="mt-2 text-red-400"
+                    className="mt-2"
                   />
                 )}
               </>
@@ -117,9 +136,9 @@ export default function Page() {
                 <input
                   type="text"
                   name="questionLatex"
-                  className="block w-full rounded-md"
+                  className="block w-full rounded-md text-red-400"
                 />
-                <div className="mt-3 text-purple-500">
+                <div className="mt-3 overflow-scroll text-purple-500">
                   <Latex>{questionInput}</Latex>
                 </div>
               </>
@@ -143,7 +162,7 @@ export default function Page() {
             type="submit"
             className="h-11 w-full rounded-3xl bg-blue-700 text-white"
           >
-            POST QUESTION
+            POST
           </button>
         </div>
       </form>

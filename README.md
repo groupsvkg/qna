@@ -51,6 +51,11 @@ TODO
 
 ## User Interface
 
+### Flow
+
+<img src='./design/ui/app_flow_iteration_1.png' width='500'>
+<img src='./design/ui/wireframe_home_iteration_1.png' width='500'>
+
 ### Post Question
 
 <img src='./design/ui/post_question_iteration_5.png' width='400'>
@@ -91,25 +96,48 @@ TODO
 
 ### Users
 
-| Name         | Type   | Description               |
-| ------------ | ------ | ------------------------- |
-| id           | uuid   | systenm generated user id |
-| email        | string | user email id             |
-| phone        | string | user phone number         |
-| provider     | string | oAuth provider            |
-| created      | date   | user creation date        |
-| last_sign_in | date   | last sign in date         |
+| Name         | Type     | Description              |
+| ------------ | -------- | ------------------------ |
+| id           | uuid     | system generated user id |
+| email        | string   | user email id            |
+| phone        | string   | user phone number        |
+| provider     | string   | oAuth provider           |
+| created      | datetime | user creation date       |
+| last_sign_in | datetime | last sign in date        |
 
 ### Profiles
 
-| Name       | Type   | Description              |
-| ---------- | ------ | ------------------------ |
-| id         | uuid   | system generated user id |
-| updated_at | date   | last profile update date |
-| username   | string | username                 |
-| full_name  | string | user full name           |
-| avatar_url | url    | user profile pic         |
-| website    | url    | user website             |
+| Name       | Type     | Description              |
+| ---------- | -------- | ------------------------ |
+| id         | uuid     | system generated user id |
+| updated_at | datetime | last profile update date |
+| username   | string   | username                 |
+| full_name  | string   | user full name           |
+| avatar_url | url      | user profile pic         |
+| website    | url      | user website             |
+
+### Questions
+
+| Name       | Type     | Description                                       |
+| ---------- | -------- | ------------------------------------------------- |
+| id         | uuid     | question id                                       |
+| created_by | uuid     | creators user id                                  |
+| created_at | datetime | creation time                                     |
+| category   | string   | question category                                 |
+| type       | string   | question type - text, url, image, draw, and latex |
+| question   | string   | question description                              |
+| answer     | string   | single or multi-word answer                       |
+
+### History
+
+| Name           | Type     | Description                                |
+| -------------- | -------- | ------------------------------------------ |
+| user_id        | uuid     | id of user trying to attempt the question  |
+| question_id    | uuid     | question id the user is trying to answer   |
+| created_at     | datetime | datetime for first attempt                 |
+| updated_at     | datetime | datetime for later attempt till its solved |
+| failed_attempt | number   | count for failed attempts                  |
+| status         | enum     | status for user attempts                   |
 
 ## System Design
 
