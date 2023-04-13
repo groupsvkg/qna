@@ -1,11 +1,16 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useSupabase } from '../../components/supabase-provider';
+import { useSupabase } from '../../../components/supabase-provider';
 
 export default function SignupForm() {
-  const { supabase } = useSupabase();
+  const { supabase, session } = useSupabase();
   const router = useRouter();
+
+  if (session) {
+    router.replace('/');
+    return;
+  }
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();

@@ -25,15 +25,20 @@ This project aims to develop a question-and-answer web app where users can solve
 
 ### Flow
 
-<img src='./design/ui/app_flow_iteration_1.png' width='600'>
-<img src='./design/ui/wireframe_home_iteration_1.png' width='600'>
+<img src='./design/ui/app_flow_iteration_1.png' width='800'>
+
+<img src='./design/ui/wireframe_home_iteration_1.png' width='800'>
 
 ### Post Question
 
 <img src='./design/ui/post_question_iteration_5.png' width='400'>
+
 <img src='./design/ui/post_question_iteration_4.png' width='400'>
+
 <img src='./design/ui/post_question_iteration_3.png' width='400'>
+
 <img src='./design/ui/post_question_iteration_2.png' width='400'>
+
 <img src='./design/ui/post_question_iteration_1.png' width='400'>
 
 ### Home

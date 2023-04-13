@@ -1,8 +1,8 @@
 import { SupabaseClient } from '@supabase/auth-helpers-nextjs';
-import SupabaseListener from '../components/supabase-listener';
-import SupabaseProvider from '../components/supabase-provider';
-import { createServerClient } from '../utils/supabase-server';
-import './globals.css';
+import SupabaseListener from '../../components/supabase-listener';
+import SupabaseProvider from '../../components/supabase-provider';
+import { createServerClient } from '../../utils/supabase-server';
+import '../globals.css';
 
 export type TypedSupabaseClient = SupabaseClient;
 
