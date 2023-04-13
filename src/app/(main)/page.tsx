@@ -10,7 +10,7 @@ export default function HomePage() {
 
   useEffect(() => {
     if (!session) router.replace('/login');
-  }, []);
+  }, [session, router]);
 
   return (
     session && (
