@@ -17,11 +17,11 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="z-40 flex h-10 items-center space-x-3 bg-green-600 p-1 text-white sm:hidden">
+      <div className="sticky z-40 flex h-10 items-center justify-between space-x-3 bg-green-600 p-1 text-white sm:hidden">
         <Link href="/" className="text-2xl font-semibold">
           QnA
         </Link>
-        <div className="fixed right-0 flex space-x-1 pr-1 font-bold text-white">
+        <div className="right-0 flex space-x-1 pr-1 font-bold text-white">
           <UserIcon className="h-6 w-6" />
           <ArrowRightOnRectangleIcon
             className="h-6 w-6"
@@ -30,16 +30,17 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className="z-40 hidden h-10 items-center space-x-3 bg-green-600 p-1 text-white sm:flex">
-        <Link href="/" className="text-2xl font-semibold">
-          QnA
-        </Link>
-        <Link href="/">Home</Link>
-        <Link href="/dashboard">Dashboard</Link>
-        <Link href="/leaderboard">Leaderboard</Link>
-        <Link href="/history">History</Link>
-        <Link href="/question">Question</Link>
-        <div className="fixed right-0 flex space-x-1 pr-1 font-bold text-white">
+      <div className="sticky z-40 hidden h-10 items-center justify-between bg-green-600 p-1 text-white sm:flex">
+        <div className="space-x-3">
+          <Link href="/" className="text-2xl font-semibold">
+            QnA
+          </Link>
+          <Link href="/">Home</Link>
+          <Link href="/dashboard">Dashboard</Link>
+          <Link href="/leaderboard">Leaderboard</Link>
+          <Link href="/history">History</Link>
+        </div>
+        <div className="right-0 flex space-x-1 pr-1 font-bold text-white">
           <UserIcon className="h-6 w-6" />
           <ArrowRightOnRectangleIcon
             className="h-6 w-6"

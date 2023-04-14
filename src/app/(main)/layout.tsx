@@ -25,8 +25,10 @@ export default async function RootLayout({
       <body className="h-screen">
         <SupabaseProvider session={session}>
           <SupabaseListener serverAccessToken={session?.access_token} />
-          {session && <Navbar />}
-          {children}
+          <div className="flex h-full flex-col bg-blue-900">
+            {session && <Navbar />}
+            {children}
+          </div>
         </SupabaseProvider>
       </body>
     </html>

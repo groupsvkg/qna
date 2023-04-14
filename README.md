@@ -27,7 +27,11 @@ This project aims to develop a question-and-answer web app where users can solve
 
 <img src='./design/ui/app_flow_iteration_1.png' width='800'>
 
+**Small, Medium, and Large Device**
 <img src='./design/ui/wireframe_home_iteration_1.png' width='800'>
+
+**Mobile Device**
+<img src='./design/ui/wireframe_home_iteration_2.png' width='800'>
 
 ### Post Question
 
@@ -42,6 +46,14 @@ This project aims to develop a question-and-answer web app where users can solve
 <img src='./design/ui/post_question_iteration_1.png' width='400'>
 
 ### Home
+
+**Small, Medium, and Large Device**
+
+<img src='./design/ui/home_iteration_5.png' width='800'>
+
+**Mobile Device**
+
+<img src='./design/ui/home_iteration_4.png' width='200' height='400'>
 
 <img src='./design/ui/home_iteration_3.png' width='200' height='400'>
 
