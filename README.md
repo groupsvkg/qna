@@ -47,6 +47,10 @@ This project aims to develop a question-and-answer web app where users can solve
 
 ### Home
 
+**Question List from backend**
+
+<img src='./design/ui/home_iteration_6.png' width='800'>
+
 **Small, Medium, and Large Device**
 
 <img src='./design/ui/home_iteration_5.png' width='800'>

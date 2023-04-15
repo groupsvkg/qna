@@ -17,7 +17,8 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="sticky z-40 flex h-10 items-center justify-between space-x-3 bg-green-600 p-1 text-white sm:hidden">
+      {/* Mobile Device */}
+      <div className="sticky z-40 flex h-10 items-center justify-between space-x-3 bg-green-600 p-1 text-white shadow sm:hidden">
         <Link href="/" className="text-2xl font-semibold">
           QnA
         </Link>
@@ -30,7 +31,8 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className="sticky z-40 hidden h-10 items-center justify-between bg-green-600 p-1 text-white sm:flex">
+      {/* Small, Medium, and Large Device */}
+      <div className="sticky z-40 hidden h-10 items-center justify-between bg-green-600 p-1 text-white shadow sm:flex">
         <div className="space-x-3">
           <Link href="/" className="text-2xl font-semibold">
             QnA
