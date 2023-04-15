@@ -121,6 +121,10 @@ TODO
 | question   | string   | question description                              |
 | answer     | string   | single or multi-word answer                       |
 
+<img src='./design/ui/data_model_question_1.png' width='500'>
+
+> Above is the response presented to the browser. Answer field is stripped about in backend.
+
 ### History
 
 | Name           | Type     | Description                                |

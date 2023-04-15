@@ -28,7 +28,7 @@ export default function HomePage() {
       <div className="flex h-full">
         {/* Mobile Device */}
         <div className="flex h-full w-full flex-col space-y-2 bg-red-400 p-2 md:hidden">
-          <div className="h-1/3 flex-none overflow-auto break-all bg-purple-400 shadow">
+          <div className="h-1/4 flex-none overflow-auto break-all bg-purple-400 shadow">
             <b className="text-yellow-800">Question List - </b>
             {JSON.stringify(questions)}
           </div>
