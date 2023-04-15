@@ -123,7 +123,7 @@ TODO
 
 <img src='./design/ui/data_model_question_1.png' width='500'>
 
-> Above is the response presented to the browser. Answer field is stripped about in backend.
+> Above is the response presented to the browser. Answer field is removed in backend.
 
 ### History
 
