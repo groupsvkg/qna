@@ -33,6 +33,30 @@ This project aims to develop a question-and-answer web app where users can solve
 **Mobile Device**
 <img src='./design/ui/wireframe_home_iteration_2.png' width='800'>
 
+### Home
+
+**Question list rendering**
+
+<img src='./design/ui/home_iteration_7.png' width='400'>
+
+**Question List from backend**
+
+<img src='./design/ui/home_iteration_6.png' width='400'>
+
+**Small, Medium, and Large Device**
+
+<img src='./design/ui/home_iteration_5.png' width='400'>
+
+**Mobile Device**
+
+<img src='./design/ui/home_iteration_4.png' width='400'>
+
+<img src='./design/ui/home_iteration_3.png' width='400'>
+
+<img src='./design/ui/home_iteration_2.png' width='400'>
+
+<img src='./design/ui/home_iteration_1.png' width='400'>
+
 ### Post Question
 
 <img src='./design/ui/post_question_iteration_5.png' width='400'>
@@ -44,26 +68,6 @@ This project aims to develop a question-and-answer web app where users can solve
 <img src='./design/ui/post_question_iteration_2.png' width='400'>
 
 <img src='./design/ui/post_question_iteration_1.png' width='400'>
-
-### Home
-
-**Question List from backend**
-
-<img src='./design/ui/home_iteration_6.png' width='800'>
-
-**Small, Medium, and Large Device**
-
-<img src='./design/ui/home_iteration_5.png' width='800'>
-
-**Mobile Device**
-
-<img src='./design/ui/home_iteration_4.png' width='200' height='400'>
-
-<img src='./design/ui/home_iteration_3.png' width='200' height='400'>
-
-<img src='./design/ui/home_iteration_2.png' width='200' height='400'>
-
-<img src='./design/ui/home_iteration_1.png' width='200' height='400'>
 
 ### Login
 
