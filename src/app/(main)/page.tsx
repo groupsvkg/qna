@@ -12,6 +12,7 @@ export default function HomePage() {
   const { session } = useSupabase();
   const router = useRouter();
   const [questions, setQuestions] = useState([]);
+  // eslint-disable-next-line no-unused-vars
   const [selectedQuestion, setSelectedQuestion] = useState(null);
 
   useEffect(() => {
