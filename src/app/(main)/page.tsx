@@ -52,15 +52,16 @@ export default function HomePage() {
                       </div>
                     )}
                     {question.type === 'url' && (
-                      <div>
+                      <div className="w-full">
                         <Image
                           src={question.question}
                           alt={question.category}
+                          fill
                         ></Image>
                       </div>
                     )}
                     {question.type === 'latex' && (
-                      <div>
+                      <div className="w-full truncate text-center">
                         <Latex>{question.question}</Latex>
                       </div>
                     )}

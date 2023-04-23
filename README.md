@@ -37,6 +37,8 @@ This project aims to develop a question-and-answer web app where users can solve
 
 **Question list rendering**
 
+<img src='./design/ui/home_iteration_10.png' width='400'>
+
 <img src='./design/ui/home_iteration_9.png' width='400'>
 
 <img src='./design/ui/home_iteration_8.png' width='400'>
