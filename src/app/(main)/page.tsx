@@ -1,7 +1,9 @@
 'use client';
 
 import { useSupabase } from '@/components/supabase-provider';
+import { PlusCircleIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Latex from 'react-latex-next';
@@ -17,7 +19,7 @@ export default function HomePage() {
 
   useEffect(() => {
     const fetchQuestions = async () => {
-      const response = await fetch('/api/questions', { cache: 'no-store' });
+      const response = await fetch('/api/questions');
       const { data } = await response.json();
       setQuestions(data);
     };
@@ -30,19 +32,23 @@ export default function HomePage() {
       <div className="flex h-full">
         {/* Mobile Device */}
         <div className="flex h-full w-full flex-col space-y-2 p-1 md:hidden">
-          <div className="h-1/5 flex-none overflow-x-auto">
-            <div className="inline-flex h-full text-ellipsis p-1">
+          <div className="h-1/6 flex-none overflow-x-auto">
+            <div className="inline-flex h-full p-1">
               {questions.map((question: any) => {
                 return (
                   <div
                     className="mr-1 flex h-full w-32 flex-col items-center justify-evenly shadow"
                     key={question.id}
                   >
-                    <div className="font-mono text-lg font-semibold capitalize text-slate-500">
+                    <div className="w-full truncate text-center font-mono text-lg font-semibold capitalize text-slate-500">
                       {question.category}
                     </div>
                     {/* <div>{question.type}</div> */}
-                    {question.type === 'text' && <div>{question.question}</div>}
+                    {question.type === 'text' && (
+                      <div className="w-full truncate text-center text-3xl">
+                        {question.question}
+                      </div>
+                    )}
                     {question.type === 'url' && (
                       <div>
                         <Image
@@ -61,7 +67,7 @@ export default function HomePage() {
               })}
             </div>
           </div>
-          <div className="grow bg-slate-400 shadow">Question Details</div>
+          <div className="grow bg-slate-100 shadow">Question Details</div>
         </div>
 
         {/* Small, Medium, and Large Device */}
@@ -69,7 +75,13 @@ export default function HomePage() {
           <div className="w-1/3 flex-none break-all bg-purple-400 shadow">
             Question List - {JSON.stringify(questions)}
           </div>
-          <div className="grow bg-slate-400 shadow">Question Details</div>
+          <div className="grow bg-slate-100 shadow">Question Details</div>
+        </div>
+
+        <div className="fixed bottom-4 right-4 flex w-screen justify-end">
+          <Link href="/question">
+            <PlusCircleIcon className="h-16 w-16 text-green-500 hover:text-green-600" />
+          </Link>
         </div>
       </div>
     )

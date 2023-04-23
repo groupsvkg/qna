@@ -19,9 +19,12 @@ export default function Navbar() {
     <>
       {/* Mobile Device */}
       <div className="sticky z-40 flex h-10 items-center justify-between space-x-3 bg-green-600 p-1 text-white shadow sm:hidden">
-        <Link href="/" className="text-2xl font-semibold">
-          QnA
-        </Link>
+        <div className="space-x-3">
+          <Link href="/" className="text-2xl font-semibold">
+            QnA
+          </Link>
+          <Link href="/">Home</Link>
+        </div>
         <div className="right-0 flex space-x-1 pr-1 font-bold text-white">
           <UserIcon className="h-6 w-6" />
           <ArrowRightOnRectangleIcon
