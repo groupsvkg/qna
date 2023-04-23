@@ -12,6 +12,7 @@ export default function HomePage() {
   const { session } = useSupabase();
   const router = useRouter();
   const [questions, setQuestions] = useState([]);
+  const [selectedQuestion, setSelectedQuestion] = useState(null);
 
   useEffect(() => {
     if (!session) router.replace('/login');
@@ -67,12 +68,16 @@ export default function HomePage() {
               })}
             </div>
           </div>
-          <div className="grow bg-slate-100 shadow">Question Details</div>
+          <div className="m-1 flex grow items-center justify-center shadow">
+            {selectedQuestion === null && (
+              <div className="text-gray-300">No question selected</div>
+            )}
+          </div>
         </div>
 
         {/* Small, Medium, and Large Device */}
         <div className="hidden h-full w-full space-x-2 p-2  md:flex">
-          <div className="w-1/3 flex-none break-all bg-purple-400 shadow">
+          <div className="w-1/6 flex-none break-all bg-purple-400 shadow">
             Question List - {JSON.stringify(questions)}
           </div>
           <div className="grow bg-slate-100 shadow">Question Details</div>

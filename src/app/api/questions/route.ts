@@ -10,6 +10,10 @@ export async function GET(request: Request, response: Response) {
     process.env.SUPABASE_SERVICE_KEY as string
   );
 
-  const { data } = await supabase.from('questions').select('*, profiles(*)');
+  const { data } = await supabase
+    .from('questions')
+    .select(
+      'id, created_by, created_at, category, type, question, profiles(*)'
+    );
   return NextResponse.json({ data });
 }
