@@ -217,6 +217,65 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## New Feature Add Process
+
+### Switch to main branch and pull
+
+```bash
+> git checkout main
+> git pull
+```
+
+### Create feature branch
+
+All feature work should be done on a branch. The branch should start with word feature. Dash (-) should be used as separator the branch name.
+
+```bash
+> git checkout -b feature-<name-of-feature>
+```
+
+This should create branch and change to it.
+
+### Make changes and add to local git
+
+Work on the feature. You may have to add new files or update existing ones. Add to local git after testing the changes
+
+```bash
+# cd to the top of the project tree
+> git add .
+```
+
+### Commit the changes to local git
+
+Git commit messages should follow the convention from coding guideline. A feature comment should start with word feature:. A documentation only change should start with docs:
+
+```bash
+> git commit 'feature: <feature desciption>'
+```
+
+This commit would trigger some checks. Fix any failures.
+
+### Push changes to github
+
+```bash
+> git push --set-upstream origin <feature-branch-for-github-which-could-be-same-as-local-feature-branch>
+```
+
+This will trigger push check as defined in husky setup. Fix any failures
+
+### Create github pull request
+
+Click on 'Pull Request' tab in github. Click on [New pull request] button. Under "Compare changes", make change to go from feature branch to main
+
+main <- 'feature-branch'
+
+Select a reviewer in the right. Submit pull request.
+
+### Resolve reviwer concerns
+
+A reviwer might approve changes. In that case, pull request can be merged to main by cliking the MERGE button.
+In case reviwer, doesn't approve, you will have to make changes to satify the reviewer by making changes and notifying the reviewer through the pull request on github.
+
 ## Development Setup
 
 ### Create Project
