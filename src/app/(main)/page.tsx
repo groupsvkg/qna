@@ -32,10 +32,10 @@ export default function HomePage() {
 
   return (
     session && (
-      <div className="flex h-full">
+      <div className="flex h-screen">
         {/* Mobile Device */}
-        <div className="flex h-full w-full flex-col space-y-2 p-1 md:hidden">
-          <div className="h-1/6 flex-none overflow-x-auto border-b-2">
+        <div className="flex w-screen flex-col space-y-2 p-1 md:hidden">
+          <div className="h-1/6 flex-none overflow-x-auto overflow-y-hidden overscroll-contain border-b-2 ">
             <div className="inline-flex h-full p-1">
               {questions.map((question: any) => {
                 return (
@@ -62,7 +62,7 @@ export default function HomePage() {
                       </div>
                     )}
                     {question.type === 'latex' && (
-                      <div>
+                      <div className="w-full overflow-hidden text-center">
                         <Latex>{question.question}</Latex>
                       </div>
                     )}
@@ -86,7 +86,7 @@ export default function HomePage() {
           <div className="grow bg-slate-100 shadow">Question Details</div>
         </div>
 
-        <div className="fixed bottom-4 right-4 flex w-screen justify-end">
+        <div className="fixed bottom-4 right-4 flex justify-end">
           <Link href="/question">
             <PlusCircleIcon className="h-16 w-16 text-green-500 hover:text-green-600" />
           </Link>

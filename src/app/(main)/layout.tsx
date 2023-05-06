@@ -22,7 +22,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className="h-screen">
+      <body className="h-screen w-screen overflow-hidden">
         <SupabaseProvider session={session}>
           <SupabaseListener serverAccessToken={session?.access_token} />
           <div className="flex h-full flex-col">
