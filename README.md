@@ -28,12 +28,18 @@ This project aims to develop a question-and-answer web app where users can solve
 <img src='./design/ui/app_flow_iteration_1.png' width='800'>
 
 **Small, Medium, and Large Device**
+
 <img src='./design/ui/wireframe_home_iteration_1.png' width='800'>
 
 **Mobile Device**
+
 <img src='./design/ui/wireframe_home_iteration_2.png' width='800'>
 
 ### Home
+
+**Implemented Question click handler**
+
+<img src='./design/ui/home_iteration_12.png' width='400'>
 
 **Fixed scroll issue**
 

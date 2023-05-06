@@ -30,6 +30,10 @@ export default function HomePage() {
     fetchQuestions();
   }, []);
 
+  const handleQuestionClick = (question: any) => {
+    setSelectedQuestion(question);
+  };
+
   return (
     session && (
       <div className="flex h-screen">
@@ -42,6 +46,7 @@ export default function HomePage() {
                   <div
                     className="mr-1 flex h-full w-32 flex-col items-center justify-evenly shadow"
                     key={question.id}
+                    onClick={() => handleQuestionClick(question)}
                   >
                     <div className="w-full truncate text-center font-mono text-lg font-semibold capitalize text-slate-500">
                       {question.category}
@@ -75,13 +80,19 @@ export default function HomePage() {
             {selectedQuestion === null && (
               <div className="text-gray-300">No question selected</div>
             )}
+            {selectedQuestion !== null && (
+              <div className="w-full text-blue-200">
+                <b className="text-green-300">Question selected - </b>
+                {JSON.stringify(selectedQuestion, null, 2)}
+              </div>
+            )}
           </div>
         </div>
 
         {/* Small, Medium, and Large Device */}
         <div className="hidden h-full w-full space-x-2 p-2  md:flex">
           <div className="w-1/6 flex-none break-all bg-purple-400 shadow">
-            Question List - {JSON.stringify(questions)}
+            Question List - {JSON.stringify(questions, null, 2)}
           </div>
           <div className="grow bg-slate-100 shadow">Question Details</div>
         </div>
