@@ -228,11 +228,13 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ### Create feature branch
 
-All feature work should be done on a branch. The branch should start with word feature. Dash (-) should be used as separator the branch name.
+All feature work should be done on a branch. The branch should start with word "feature/". Dash (-) should be used as separator the branch name.
 
 ```bash
-> git checkout -b feature-<name-of-feature>
+> git checkout -b feature/<name-of-feature>
 ```
+
+Example branch name could be "feature/update-docs-for-new-feature"
 
 This should create branch and change to it.
 
@@ -250,8 +252,10 @@ Work on the feature. You may have to add new files or update existing ones. Add 
 Git commit messages should follow the convention from coding guideline. A feature comment should start with word feature:. A documentation only change should start with docs:
 
 ```bash
-> git commit 'feature: <feature desciption>'
+> git commit -m 'feature: <feature desciption>'
 ```
+
+All the words that could be at the begining of the commit message can be found at `commitlint.config.js`
 
 This commit would trigger some checks. Fix any failures.
 
@@ -261,7 +265,8 @@ This commit would trigger some checks. Fix any failures.
 > git push --set-upstream origin <feature-branch-for-github-which-could-be-same-as-local-feature-branch>
 ```
 
-This will trigger push check as defined in husky setup. Fix any failures
+Feature branch should follow same naming convention as local feature branch where branch name starts with "feature/feature-name".
+Git push will trigger push check as defined in husky setup. Fix any failures
 
 ### Create github pull request
 
@@ -271,10 +276,12 @@ main <- 'feature-branch'
 
 Select a reviewer in the right. Submit pull request.
 
-### Resolve reviwer concerns
+### Resolve reviewer concerns
 
-A reviwer might approve changes. In that case, pull request can be merged to main by cliking the MERGE button.
+A reviewer might approve changes. In that case, pull request can be merged to main by cliking the MERGE button.
 In case reviwer, doesn't approve, you will have to make changes to satify the reviewer by making changes and notifying the reviewer through the pull request on github.
+
+Fixes should be committed with commit message with prefix "fix: "
 
 ## Development Setup
 
