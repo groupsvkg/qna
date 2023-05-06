@@ -37,6 +37,10 @@ This project aims to develop a question-and-answer web app where users can solve
 
 ### Home
 
+**Updated Question details ui**
+
+<img src='./design/ui/home_iteration_13.png' width='400'>
+
 **Implemented Question click handler**
 
 <img src='./design/ui/home_iteration_12.png' width='400'>
