@@ -9,17 +9,20 @@ This project aims to develop a question-and-answer web app where users can solve
 > - `ER` - Extended Requirement
 > - `SR` - System Requirement
 
-| ID  | Description                                                                                     | Status     |
-| --- | ----------------------------------------------------------------------------------------------- | ---------- |
-| FR1 | User must be able to login via email and password, gmail, and others supported by `Supabase`    | DONE       |
-| FR2 | User must be able to view list of questions                                                     | INPROGRESS |
-| FR3 | User must be able to view and attempt a specific question                                       | TODO       |
-| FR4 | User must be able to add new question                                                           | TODO       |
-| FR5 | User must be able to delete his question                                                        | TODO       |
-| FR6 | User must be able to Group existing questions that further can be shared as challenge to others | TODO       |
-| FR7 | User must be able to see his score and activity history                                         | TODO       |
-| SR1 | System must handle realtime notification                                                        | TODO       |
-| SR2 | System should allow new question ingestion                                                      | TODO       |
+| ID   | Description                                                                                     | Status     |
+| ---- | ----------------------------------------------------------------------------------------------- | ---------- |
+| FR1  | User must be able to login via email and password, gmail, and others supported by `Supabase`    | DONE       |
+| FR2  | User must be able to view list of questions                                                     | INPROGRESS |
+| FR3  | User must be able to view and attempt a specific question                                       | TODO       |
+| FR4  | User must be able to add new question                                                           | TODO       |
+| FR5  | User must be able to delete his question                                                        | TODO       |
+| FR6  | User must be able to Group existing questions that further can be shared as challenge to others | TODO       |
+| FR7  | User must be able to see his score and activity history                                         | TODO       |
+| FR8  | Add support for google and facebook OAuth provider                                              | TODO       |
+| FR9  | Add validation for email signup                                                                 | TODO       |
+| FR10 | Send to profile update page on first login                                                      | TODO       |
+| SR1  | System must handle realtime notification                                                        | TODO       |
+| SR2  | System should allow new question ingestion                                                      | TODO       |
 
 ## User Interface
 
