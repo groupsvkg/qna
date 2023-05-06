@@ -149,7 +149,6 @@ export default function HomePage() {
                 </div>
 
                 {input.length === 0 && (
-                  // <div className="text-3xl text-gray-300">Type to answer</div>
                   <div className="fixed bottom-40 flex w-screen justify-center text-4xl text-gray-200">
                     Type to answer...
                   </div>
