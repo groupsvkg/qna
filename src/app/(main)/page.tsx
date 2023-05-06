@@ -35,7 +35,7 @@ export default function HomePage() {
       <div className="flex h-screen">
         {/* Mobile Device */}
         <div className="flex w-screen flex-col space-y-2 p-1 md:hidden">
-          <div className="h-1/6 flex-none overflow-x-auto overflow-y-hidden overscroll-contain border-b-2 ">
+          <div className="h-1/6 flex-none overflow-x-auto overflow-y-hidden border-b-2 scrollbar-hide ">
             <div className="inline-flex h-full p-1">
               {questions.map((question: any) => {
                 return (
