@@ -2,6 +2,7 @@
 
 import { useSupabase } from '@/components/supabase-provider';
 import { PlusCircleIcon } from '@heroicons/react/24/solid';
+import 'katex/dist/katex.min.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -34,7 +35,7 @@ export default function HomePage() {
       <div className="flex h-full">
         {/* Mobile Device */}
         <div className="flex h-full w-full flex-col space-y-2 p-1 md:hidden">
-          <div className="h-1/6 flex-none overflow-x-auto">
+          <div className="h-1/6 flex-none overflow-x-auto border-b-2">
             <div className="inline-flex h-full p-1">
               {questions.map((question: any) => {
                 return (
@@ -61,7 +62,7 @@ export default function HomePage() {
                       </div>
                     )}
                     {question.type === 'latex' && (
-                      <div className="w-full truncate text-center">
+                      <div>
                         <Latex>{question.question}</Latex>
                       </div>
                     )}
