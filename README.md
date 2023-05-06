@@ -35,6 +35,10 @@ This project aims to develop a question-and-answer web app where users can solve
 
 ### Home
 
+**Fixed scroll issue**
+
+<img src='./design/ui/home_iteration_11.png' width='400'>
+
 **Question list rendering**
 
 <img src='./design/ui/home_iteration_10.png' width='400'>
