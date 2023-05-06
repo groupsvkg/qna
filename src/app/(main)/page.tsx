@@ -14,7 +14,7 @@ export default function HomePage() {
   const router = useRouter();
   const [questions, setQuestions] = useState([]);
   // eslint-disable-next-line no-unused-vars
-  const [selectedQuestion, setSelectedQuestion] = useState(null);
+  const [selectedQuestion, setSelectedQuestion] = useState<any>(null);
 
   useEffect(() => {
     if (!session) router.replace('/login');
@@ -76,14 +76,36 @@ export default function HomePage() {
               })}
             </div>
           </div>
+          {/* Question Details for mobile or small device */}
           <div className="m-1 flex grow items-center justify-center shadow">
             {selectedQuestion === null && (
               <div className="text-gray-300">No question selected</div>
             )}
             {selectedQuestion !== null && (
-              <div className="w-full text-blue-200">
-                <b className="text-green-300">Question selected - </b>
-                {JSON.stringify(selectedQuestion, null, 2)}
+              <div className="flex h-full w-full flex-col items-center justify-around">
+                <div className="flex h-1/6 flex-col items-center justify-center">
+                  {selectedQuestion.type === 'text' && (
+                    <div className="w-full truncate text-center text-6xl">
+                      {selectedQuestion.question}
+                    </div>
+                  )}
+                  {selectedQuestion.type === 'url' && (
+                    <div className="w-full">
+                      <Image
+                        src={selectedQuestion.question}
+                        alt={selectedQuestion.category}
+                        fill
+                      ></Image>
+                    </div>
+                  )}
+                  {selectedQuestion.type === 'latex' && (
+                    <div className="w-full overflow-hidden text-center text-4xl">
+                      <Latex>{selectedQuestion.question}</Latex>
+                    </div>
+                  )}
+                </div>
+                <div className="w-full bg-yellow-500">Part-2</div>
+                <div className="text-3xl text-gray-300">Type to answer</div>
               </div>
             )}
           </div>
