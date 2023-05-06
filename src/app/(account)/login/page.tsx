@@ -41,6 +41,16 @@ export default function LoginPage() {
     }
   };
 
+  const handleFacebookLogin = async () => {
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'facebook',
+    });
+
+    if (error) {
+      console.log({ error });
+    }
+  };
+
   return (
     !session && (
       <div className="flex h-screen items-center justify-center">
@@ -92,6 +102,15 @@ export default function LoginPage() {
                   onClick={handleGoogleLogin}
                 >
                   Google
+                </button>
+              </div>
+              <div className="flex justify-center">
+                <button
+                  type="button"
+                  className="h-11 w-full rounded-3xl bg-blue-700 text-white"
+                  onClick={handleFacebookLogin}
+                >
+                  Facebook
                 </button>
               </div>
             </form>
