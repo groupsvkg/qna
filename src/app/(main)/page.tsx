@@ -6,15 +6,16 @@ import 'katex/dist/katex.min.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { KeyboardEvent, useEffect, useRef, useState } from 'react';
 import Latex from 'react-latex-next';
 
 export default function HomePage() {
   const { session } = useSupabase();
   const router = useRouter();
   const [questions, setQuestions] = useState([]);
-  // eslint-disable-next-line no-unused-vars
   const [selectedQuestion, setSelectedQuestion] = useState<any>(null);
+  const [input, setInput] = useState<string[]>([]);
+  const divRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!session) router.replace('/login');
@@ -30,7 +31,34 @@ export default function HomePage() {
     fetchQuestions();
   }, []);
 
+  useEffect(() => {
+    divRef.current?.focus();
+  }, [selectedQuestion]);
+
+  const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    event.preventDefault();
+
+    if (event.key.length === 1) {
+      if (input.length > 0 && input[input.length - 1] === '\u23ce') return;
+      setInput([...input, event.key]);
+    }
+
+    if (event.key === 'Backspace') {
+      setInput(input.slice(0, input.length - 1));
+    }
+
+    if (
+      event.key === 'Enter' &&
+      input.length > 0 &&
+      input[input.length - 1] !== '\u23ce'
+    ) {
+      setInput([...input, '\u23ce']);
+    }
+  };
+
   const handleQuestionClick = (question: any) => {
+    divRef.current?.focus();
+    setInput([]);
     setSelectedQuestion(question);
   };
 
@@ -104,8 +132,27 @@ export default function HomePage() {
                     </div>
                   )}
                 </div>
-                <div className="w-full bg-yellow-500">Part-2</div>
-                <div className="text-3xl text-gray-300">Type to answer</div>
+                <div
+                  ref={divRef}
+                  tabIndex={0}
+                  onKeyDown={handleKeyDown}
+                  className="flex h-8 w-full items-center justify-center focus:outline-none"
+                >
+                  {input.map((char, index) => (
+                    <div
+                      key={index}
+                      className="m-1 flex h-6 w-6 items-center justify-center border-2 border-dashed border-orange-300 focus:outline-none"
+                    >
+                      {char}
+                    </div>
+                  ))}
+                </div>
+
+                {input.length === 0 && (
+                  <div className="fixed bottom-40 flex w-screen justify-center text-4xl text-gray-200">
+                    Type to answer...
+                  </div>
+                )}
               </div>
             )}
           </div>
