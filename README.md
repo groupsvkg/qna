@@ -40,6 +40,12 @@ This project aims to develop a question-and-answer web app where users can solve
 
 ### Home
 
+**Type to answer - ui update**
+
+<img src='./design/ui/home_iteration_15.png' width='400'>
+
+<img src='./design/ui/home_iteration_14.png' width='400'>
+
 **Updated Question details ui**
 
 <img src='./design/ui/home_iteration_13.png' width='400'>
