@@ -22,7 +22,7 @@ export default function SignupForm() {
     if (error) {
       console.log({ error });
     } else {
-      router.replace('/');
+      router.replace('/profile');
     }
   };
 
