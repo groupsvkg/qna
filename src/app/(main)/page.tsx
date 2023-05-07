@@ -126,7 +126,12 @@ export default function HomePage() {
             </div>
           </div>
           {/* Question Details for mobile or small device */}
-          <div className="m-1 flex grow items-center justify-center shadow">
+          <div
+            ref={divRef}
+            tabIndex={0}
+            onKeyDown={handleKeyDown}
+            className="m-1 flex grow items-center justify-center shadow focus:outline-none"
+          >
             {selectedQuestion === null && (
               <div className="text-gray-300">No question selected</div>
             )}
@@ -153,12 +158,7 @@ export default function HomePage() {
                     </div>
                   )}
                 </div>
-                <div
-                  ref={divRef}
-                  tabIndex={0}
-                  onKeyDown={handleKeyDown}
-                  className="flex h-8 w-full items-center justify-center focus:outline-none"
-                >
+                <div className="flex h-8 w-full items-center justify-center focus:outline-none">
                   {input.map((char, index) => (
                     <div
                       key={index}
