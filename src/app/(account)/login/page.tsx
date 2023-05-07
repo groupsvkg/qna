@@ -18,7 +18,6 @@ export default function LoginPage() {
       }
     };
     checkSession();
-    console.log('Login useAffect');
   });
 
   supabase.auth.onAuthStateChange((event) => {
@@ -50,8 +49,6 @@ export default function LoginPage() {
 
     if (error) {
       console.log({ error });
-    } else {
-      console.log('Google good');
     }
   };
 
@@ -63,10 +60,7 @@ export default function LoginPage() {
     if (error) {
       console.log({ error });
     } else {
-      console.log('in handleFacebookLogin');
-      const { data } = await supabase.auth.getSession();
-      console.log(data);
-      console.log('Facebook good');
+      await supabase.auth.getSession();
     }
   };
 
