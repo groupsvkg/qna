@@ -10,7 +10,7 @@ import { KeyboardEvent, useEffect, useRef, useState } from 'react';
 import Latex from 'react-latex-next';
 
 export default function HomePage() {
-  const { session } = useSupabase();
+  const { supabase, session } = useSupabase();
   const router = useRouter();
   const [questions, setQuestions] = useState([]);
   const [selectedQuestion, setSelectedQuestion] = useState<any>(null);
@@ -18,8 +18,14 @@ export default function HomePage() {
   const divRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!session) router.replace('/login');
-  }, [session]);
+    const checkSession = async () => {
+      const { data } = await supabase.auth.getSession();
+      if (!data.session) {
+        router.replace('/login');
+      }
+    };
+    checkSession();
+  });
 
   useEffect(() => {
     const fetchQuestions = async () => {

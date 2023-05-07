@@ -12,11 +12,13 @@ export default function LoginPage() {
   useEffect(() => {
     const checkSession = async () => {
       const { data } = await supabase.auth.getSession();
+      console.log(data);
       if (data.session) {
         router.replace('/');
       }
     };
     checkSession();
+    console.log('Login useAffect');
   });
 
   supabase.auth.onAuthStateChange((event) => {
@@ -36,8 +38,6 @@ export default function LoginPage() {
 
       if (error) {
         console.log({ error });
-      } else {
-        router.replace('/');
       }
     };
     signIn();
@@ -50,6 +50,8 @@ export default function LoginPage() {
 
     if (error) {
       console.log({ error });
+    } else {
+      console.log('Google good');
     }
   };
 
@@ -60,6 +62,11 @@ export default function LoginPage() {
 
     if (error) {
       console.log({ error });
+    } else {
+      console.log('in handleFacebookLogin');
+      const { data } = await supabase.auth.getSession();
+      console.log(data);
+      console.log('Facebook good');
     }
   };
 
