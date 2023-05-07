@@ -44,6 +44,10 @@ This project aims to develop a question-and-answer web app where users can solve
 
 ### Home
 
+**Implemented backend logic to verify answer**
+
+<img src='./design/ui/home_iteration_16.png' width='400'>
+
 **Type to answer - ui update**
 
 <img src='./design/ui/home_iteration_15.png' width='400'>
