@@ -1,8 +1,9 @@
 'use client';
 
 import type { Session, SupabaseClient } from '@supabase/auth-helpers-nextjs';
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 // import type { TypedSupabaseClient } from '../app/(main)/layout';
+import { useRouter } from 'next/navigation';
 import { createBrowserClient } from '../utils/supabase-browser';
 
 export type TypedSupabaseClient = SupabaseClient;
@@ -25,6 +26,19 @@ export default function SupabaseProvider({
   session: MaybeSession;
 }) {
   const [supabase] = useState(() => createBrowserClient());
+  const router = useRouter();
+
+  useEffect(() => {
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange(() => {
+      router.refresh();
+    });
+
+    return () => {
+      subscription.unsubscribe();
+    };
+  }, [router, supabase]);
 
   return (
     <Context.Provider value={{ supabase, session }}>

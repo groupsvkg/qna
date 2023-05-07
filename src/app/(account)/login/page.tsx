@@ -10,8 +10,20 @@ export default function LoginPage() {
   const router = useRouter();
 
   useEffect(() => {
-    if (session) router.replace('/');
-  }, [session, router]);
+    const checkSession = async () => {
+      const { data } = await supabase.auth.getSession();
+      if (data.session) {
+        router.replace('/');
+      }
+    };
+    checkSession();
+  });
+
+  supabase.auth.onAuthStateChange((event) => {
+    if (event == 'SIGNED_IN') {
+      router.replace('/');
+    }
+  });
 
   const handleEmailLogin = (event: any) => {
     event.preventDefault();

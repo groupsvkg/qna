@@ -19,7 +19,7 @@ export default function HomePage() {
 
   useEffect(() => {
     if (!session) router.replace('/login');
-  }, [session, router]);
+  }, [session]);
 
   useEffect(() => {
     const fetchQuestions = async () => {
