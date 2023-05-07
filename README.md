@@ -24,6 +24,10 @@ This project aims to develop a question-and-answer web app where users can solve
 | SR1  | System must handle realtime notification                                                        | TODO       |
 | SR2  | System should allow new question ingestion                                                      | TODO       |
 
+## Questions
+
+<img src='./design/ui/questions.png' width='800'>
+
 ## User Interface
 
 ### Flow
