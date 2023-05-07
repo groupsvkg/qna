@@ -47,6 +47,7 @@
     "@tailwindcss/forms": "^0.5.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
+    "@types/jest": "^29.5.1",
     "autoprefixer": "^10.4.14",
     "cross-env": "^7.0.3",
     "cypress": "^12.11.0",
@@ -57,6 +58,7 @@
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",
     "prettier-plugin-tailwindcss": "^0.2.4",
-    "tailwindcss": "^3.2.7"
+    "tailwindcss": "^3.2.7",
+    "ts-jest": "^29.1.0"
   }
 }
