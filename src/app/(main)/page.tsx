@@ -32,6 +32,27 @@ export default function HomePage() {
   }, []);
 
   useEffect(() => {
+    const verify = async () => {
+      const response = await fetch('/api/verify', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          ...selectedQuestion,
+          answer: input.slice(0, -1).join(''),
+        }),
+      });
+
+      // eslint-disable-next-line no-unused-vars
+      const { data } = await response.json();
+    };
+
+    if (input.includes('\u23ce')) verify();
+  }, [input]);
+
+  useEffect(() => {
     divRef.current?.focus();
   }, [selectedQuestion]);
 
