@@ -50,6 +50,8 @@ This project aims to develop a question-and-answer web app where users can solve
 
 **Demo Video**
 
+<img src="https://www.youtube.com/watch?v=Cv9u-xDz7I4" width="50%">
+
 **Implemented backend logic to verify answer**
 
 <img src='./design/ui/home_iteration_16.png' width='400'>
