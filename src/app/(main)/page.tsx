@@ -16,6 +16,9 @@ export default function HomePage() {
   const [selectedQuestion, setSelectedQuestion] = useState<any>(null);
   const [input, setInput] = useState<string[]>([]);
   const divRef = useRef<HTMLDivElement>(null);
+  const [isVerificationInProgress, setIsVerificationInProgress] =
+    useState(false);
+  const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
 
   useEffect(() => {
     if (!session) router.replace('/login');
@@ -45,8 +48,11 @@ export default function HomePage() {
         }),
       });
 
-      // eslint-disable-next-line no-unused-vars
       const { data } = await response.json();
+      if (data.isCorrect) setIsCorrect(true);
+      else setIsCorrect(false);
+
+      setIsVerificationInProgress(false);
     };
 
     if (input.includes('\u23ce')) verify();
@@ -54,6 +60,7 @@ export default function HomePage() {
 
   useEffect(() => {
     divRef.current?.focus();
+    setIsCorrect(null);
   }, [selectedQuestion]);
 
   const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
@@ -66,6 +73,8 @@ export default function HomePage() {
 
     if (event.key === 'Backspace') {
       setInput(input.slice(0, input.length - 1));
+      setIsVerificationInProgress(false);
+      setIsCorrect(null);
     }
 
     if (
@@ -74,11 +83,13 @@ export default function HomePage() {
       input[input.length - 1] !== '\u23ce'
     ) {
       setInput([...input, '\u23ce']);
+      setIsVerificationInProgress(true);
     }
   };
 
   const handleQuestionClick = (question: any) => {
     divRef.current?.focus();
+    setIsCorrect(null);
     setInput([]);
     setSelectedQuestion(question);
   };
@@ -136,7 +147,7 @@ export default function HomePage() {
               <div className="text-gray-300">No question selected</div>
             )}
             {selectedQuestion !== null && (
-              <div className="flex h-full w-full flex-col items-center justify-around">
+              <div className="flex h-1/2 w-full flex-col items-center justify-around">
                 <div className="flex h-1/6 flex-col items-center justify-center">
                   {selectedQuestion.type === 'text' && (
                     <div className="w-full truncate text-center text-6xl">
@@ -145,11 +156,11 @@ export default function HomePage() {
                   )}
                   {selectedQuestion.type === 'url' && (
                     <div className="w-full">
-                      <Image
+                      {/* <Image
                         src={selectedQuestion.question}
                         alt={selectedQuestion.category}
                         fill
-                      ></Image>
+                      ></Image> */}
                     </div>
                   )}
                   {selectedQuestion.type === 'latex' && (
@@ -158,6 +169,7 @@ export default function HomePage() {
                     </div>
                   )}
                 </div>
+                {/* Display user input */}
                 <div className="flex h-8 w-full items-center justify-center focus:outline-none">
                   {input.map((char, index) => (
                     <div
@@ -167,6 +179,59 @@ export default function HomePage() {
                       {char}
                     </div>
                   ))}
+                  {isVerificationInProgress && (
+                    <div>
+                      <svg
+                        className="mr-3 h-5 w-5 animate-spin"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          fill="transparent"
+                          stroke="purple"
+                          strokeWidth="4"
+                        ></circle>
+                        <path
+                          className="opacity-75"
+                          fill="brown"
+                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        ></path>
+                      </svg>
+                    </div>
+                  )}
+                  {isCorrect && (
+                    <svg
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={2}
+                      stroke="green"
+                      className="ml-3 h-5 w-5 animate-ping"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M4.5 12.75l6 6 9-13.5"
+                      />
+                    </svg>
+                  )}
+                  {isCorrect === false && (
+                    <svg
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={2}
+                      stroke="red"
+                      className="h-5 w-5 animate-ping"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  )}
                 </div>
 
                 {input.length === 0 && (
