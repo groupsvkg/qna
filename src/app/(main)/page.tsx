@@ -182,7 +182,7 @@ export default function HomePage() {
                   {isVerificationInProgress && (
                     <div>
                       <svg
-                        className="mr-3 h-5 w-5 animate-spin"
+                        className="ml-3 h-5 w-5 animate-spin"
                         viewBox="0 0 24 24"
                       >
                         <circle
@@ -223,7 +223,7 @@ export default function HomePage() {
                       viewBox="0 0 24 24"
                       strokeWidth={2}
                       stroke="red"
-                      className="h-5 w-5 animate-ping"
+                      className="ml-3 h-5 w-5 animate-ping"
                     >
                       <path
                         strokeLinecap="round"
