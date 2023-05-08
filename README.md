@@ -2,6 +2,10 @@
 
 This project aims to develop a question-and-answer web app where users can solve the questions posted by other users or the system. They will also have the ability to post their questions. The app will allow users to bookmark or group questions and challenge others.
 
+<img src='./design/ui/donald_knuth.png' width='400'>
+
+[Donald Knuth](https://www-cs-faculty.stanford.edu/~knuth/)
+
 ## Requirements
 
 > - `FR` - Functional Requirement,
