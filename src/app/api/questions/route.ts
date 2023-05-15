@@ -12,8 +12,9 @@ export async function GET(request: Request, response: Response) {
 
   const { data } = await supabase
     .from('questions')
-    .select(
-      'id, created_by, created_at, category, type, question, profiles(*)'
-    );
+    .select('id, created_by, created_at, category, type, question, profiles(*)')
+    .order('created_at', {
+      ascending: false,
+    });
   return NextResponse.json({ data });
 }
