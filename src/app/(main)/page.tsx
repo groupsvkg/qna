@@ -98,13 +98,18 @@ export default function HomePage() {
     session && (
       <div className="flex h-screen">
         {/* Mobile Device */}
-        <div className="flex w-screen flex-col space-y-2 p-1 md:hidden">
+        {/* <div className="flex w-screen flex-col space-y-2 p-1 md:hidden"> */}
+        <div className="flex w-screen flex-col space-y-2 p-1">
           <div className="h-1/6 flex-none overflow-x-auto overflow-y-hidden border-b-2 scrollbar-hide ">
             <div className="inline-flex h-full p-1">
               {questions.map((question: any) => {
                 return (
                   <div
-                    className="mr-1 flex h-full w-32 flex-col items-center justify-evenly shadow"
+                    className={
+                      selectedQuestion && selectedQuestion.id === question.id
+                        ? 'mr-1 flex h-full w-32 flex-col items-center justify-evenly bg-gray-100 shadow'
+                        : 'mr-1 flex h-full w-32 flex-col items-center justify-evenly shadow hover:cursor-pointer'
+                    }
                     key={question.id}
                     onClick={() => handleQuestionClick(question)}
                   >
@@ -113,21 +118,22 @@ export default function HomePage() {
                     </div>
                     {/* <div>{question.type}</div> */}
                     {question.type === 'text' && (
-                      <div className="w-full truncate text-center text-3xl">
+                      <div className="w-full truncate text-center text-3xl text-slate-700">
                         {question.question}
                       </div>
                     )}
                     {question.type === 'url' && (
-                      <div className="w-full">
+                      <div className="flex w-full items-center justify-center">
                         <Image
                           src={question.question}
                           alt={question.category}
-                          fill
+                          width={64}
+                          height={64}
                         ></Image>
                       </div>
                     )}
                     {question.type === 'latex' && (
-                      <div className="w-full overflow-hidden text-center">
+                      <div className="w-full truncate text-center text-slate-700">
                         <Latex>{question.question}</Latex>
                       </div>
                     )}
@@ -148,19 +154,20 @@ export default function HomePage() {
             )}
             {selectedQuestion !== null && (
               <div className="flex h-1/2 w-full flex-col items-center justify-around">
-                <div className="flex h-1/6 flex-col items-center justify-center">
+                <div className="flex h-full flex-col items-center justify-start">
                   {selectedQuestion.type === 'text' && (
-                    <div className="w-full truncate text-center text-6xl">
+                    <div className="w-full truncate text-center text-6xl text-slate-600">
                       {selectedQuestion.question}
                     </div>
                   )}
                   {selectedQuestion.type === 'url' && (
-                    <div className="w-full">
-                      {/* <Image
+                    <div className="h-full w-full">
+                      <Image
                         src={selectedQuestion.question}
                         alt={selectedQuestion.category}
-                        fill
-                      ></Image> */}
+                        width={500}
+                        height={500}
+                      ></Image>
                     </div>
                   )}
                   {selectedQuestion.type === 'latex' && (
@@ -245,12 +252,12 @@ export default function HomePage() {
         </div>
 
         {/* Small, Medium, and Large Device */}
-        <div className="hidden h-full w-full space-x-2 p-2  md:flex">
+        {/* <div className="hidden h-full w-full space-x-2 p-2  md:flex">
           <div className="w-1/6 flex-none break-all bg-purple-400 shadow">
             Question List - {JSON.stringify(questions, null, 2)}
           </div>
           <div className="grow bg-slate-100 shadow">Question Details</div>
-        </div>
+        </div> */}
 
         <div className="fixed bottom-4 right-4 flex justify-end">
           <Link href="/question">

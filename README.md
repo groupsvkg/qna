@@ -46,13 +46,15 @@ This project aims to develop a question-and-answer web app where users can solve
 
 <img src='./design/ui/wireframe_home_iteration_2.png' width='800'>
 
-### Home
+### Demo
 
-**Demo Video**
+<img src="https://github.com/groupsvkg/qna/assets/366335/50d74f64-b662-4480-b6ee-165cb59e21e5" width="50%">
 
 <img src="https://user-images.githubusercontent.com/366335/236909025-230ace6f-b31b-4f1d-8de3-bff280bf8a14.mp4" width="50%">
 
 <img src="https://user-images.githubusercontent.com/366335/236849094-e4413153-221f-4d35-9eca-f671ba5154b6.mp4" width="50%">
+
+### Home
 
 **Implemented backend logic to verify answer**
 
