@@ -48,7 +48,7 @@ This project aims to develop a question-and-answer web app where users can solve
 
 ### Demo
 
-<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/366335/238375261-50d74f64-b662-4480-b6ee-165cb59e21e5.webm" width="50%">
+<img src="https://user-images.githubusercontent.com/366335/238375261-50d74f64-b662-4480-b6ee-165cb59e21e5.webm" width="50%">
 
 <img src="https://user-images.githubusercontent.com/366335/236909025-230ace6f-b31b-4f1d-8de3-bff280bf8a14.mp4" width="50%">
 
