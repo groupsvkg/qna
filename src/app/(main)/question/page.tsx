@@ -160,7 +160,7 @@ export default function QuestionPage() {
         <div>
           <button
             type="submit"
-            className="h-11 w-full rounded-3xl bg-blue-700 text-white"
+            className="h-11 w-full rounded-3xl bg-green-500 text-white"
           >
             POST
           </button>

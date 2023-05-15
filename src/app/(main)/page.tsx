@@ -156,7 +156,7 @@ export default function HomePage() {
               <div className="flex h-1/2 w-full flex-col items-center justify-around">
                 <div className="flex h-full flex-col items-center justify-start">
                   {selectedQuestion.type === 'text' && (
-                    <div className="w-full truncate text-center text-6xl text-slate-600">
+                    <div className="w-full truncate text-center text-8xl text-slate-600">
                       {selectedQuestion.question}
                     </div>
                   )}
@@ -171,7 +171,7 @@ export default function HomePage() {
                     </div>
                   )}
                   {selectedQuestion.type === 'latex' && (
-                    <div className="w-full overflow-hidden text-center text-4xl">
+                    <div className="w-full overflow-hidden text-center text-6xl">
                       <Latex>{selectedQuestion.question}</Latex>
                     </div>
                   )}
