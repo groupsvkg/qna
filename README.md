@@ -46,6 +46,8 @@ This project aims to develop a question-and-answer web app where users can solve
 
 <img src='./design/ui/wireframe_home_iteration_2.png' width='800'>
 
+### Deployments
+
 ### Demo
 
 <img src="https://user-images.githubusercontent.com/366335/238425732-92dfc8dd-dc5e-4486-91c7-d935ea997353.webm" width="50%">

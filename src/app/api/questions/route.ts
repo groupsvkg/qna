@@ -16,5 +16,6 @@ export async function GET(request: Request, response: Response) {
     .order('created_at', {
       ascending: false,
     });
+
   return NextResponse.json({ data });
 }

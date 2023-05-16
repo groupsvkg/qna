@@ -43,7 +43,8 @@ export default function HomePage() {
           Accept: 'application/json',
         },
         body: JSON.stringify({
-          ...selectedQuestion,
+          question_id: selectedQuestion.id,
+          user_id: session?.user.id,
           answer: input.slice(0, -1).join(''),
         }),
       });
@@ -102,7 +103,7 @@ export default function HomePage() {
         <div className="flex w-screen flex-col space-y-2 p-1">
           <div className="h-1/6 flex-none overflow-x-auto overflow-y-hidden border-b-2 scrollbar-hide ">
             <div className="inline-flex h-full p-1">
-              {questions.map((question: any) => {
+              {questions?.map((question: any) => {
                 return (
                   <div
                     className={
