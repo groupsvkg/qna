@@ -709,8 +709,8 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 - Install `vercel cli`
   - `npm install -g vercel`
-- Execute `vercel` command from root
-- Add environment variables
+- Execute `vercel` command from root to deploy(non-production deployment)
+- Add environment variables - **executed once**
   - `vercel env add NEXT_PUBLIC_SUPABASE_URL`
   - `vercel env add NEXT_PUBLIC_SUPABASE_ANON_KEY`
   - `vercel env add SUPABASE_SERVICE_KEY`
